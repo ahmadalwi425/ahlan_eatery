@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2021 at 10:13 AM
+-- Generation Time: Sep 16, 2021 at 07:07 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_ahlan_eatery`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extra`
+--
+
+CREATE TABLE `extra` (
+  `id` bigint(20) NOT NULL,
+  `nama_extra` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `harga` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -88,7 +100,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2021_09_13_054034_create_order_table', 1),
 (7, '2021_09_13_054049_create_order_detail_table', 1),
 (8, '2021_09_13_054146_create_transaksi_table', 1),
-(9, '2021_09_13_071410_create_jenis_masakan_table', 2);
+(9, '2021_09_13_071410_create_jenis_masakan_table', 2),
+(10, '2021_09_16_032241_create_extra_table', 3);
 
 -- --------------------------------------------------------
 
@@ -115,7 +128,10 @@ CREATE TABLE `order_detail` (
   `id` bigint(20) NOT NULL,
   `id_order` bigint(20) NOT NULL,
   `id_masakan` bigint(20) NOT NULL,
-  `keterangan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  `keterangan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `harga` int(10) NOT NULL,
+  `qty` int(10) NOT NULL,
+  `id_extra` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -151,19 +167,6 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
---
-
-CREATE TABLE `transaksi` (
-  `id` bigint(20) NOT NULL,
-  `id_order` bigint(20) NOT NULL,
-  `tanggal` date NOT NULL,
-  `total_bayar` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -181,6 +184,12 @@ CREATE TABLE `users` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `extra`
+--
+ALTER TABLE `extra`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -220,7 +229,8 @@ ALTER TABLE `order`
 ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_order` (`id_order`),
-  ADD KEY `id_masakan` (`id_masakan`);
+  ADD KEY `id_masakan` (`id_masakan`),
+  ADD KEY `id_extra` (`id_extra`);
 
 --
 -- Indexes for table `password_resets`
@@ -237,13 +247,6 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_order` (`id_order`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -253,6 +256,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `extra`
+--
+ALTER TABLE `extra`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -276,7 +285,7 @@ ALTER TABLE `masakan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -295,12 +304,6 @@ ALTER TABLE `order_detail`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `transaksi`
---
-ALTER TABLE `transaksi`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -323,13 +326,8 @@ ALTER TABLE `masakan`
 --
 ALTER TABLE `order_detail`
   ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`id_masakan`) REFERENCES `masakan` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`id_order`) REFERENCES `order` (`id`) ON UPDATE CASCADE;
-
---
--- Constraints for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`id_order`) REFERENCES `order` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`id_order`) REFERENCES `order` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `order_detail_ibfk_3` FOREIGN KEY (`id_extra`) REFERENCES `extra` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
