@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\masakanController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,4 @@ Route::get('/pesan/{id}', [App\Http\Controllers\orderController::class, 'pesanme
 Route::post('/pesan', [App\Http\Controllers\orderController::class, 'tampilpesan']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('masakan', masakanController::class);
