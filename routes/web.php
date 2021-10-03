@@ -19,4 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/pesan/{id}', [App\Http\Controllers\orderController::class, 'pesanmeja']);
+
+Route::post('/pesan', [App\Http\Controllers\orderController::class, 'tampilpesan']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
