@@ -2,7 +2,7 @@
 
 
 @section('title')
-<h4>Create New Menu</h4>
+<h4>Edit Menu Extra</h4>
 @endsection
 @section('content')
 {{-- Form Here --}}

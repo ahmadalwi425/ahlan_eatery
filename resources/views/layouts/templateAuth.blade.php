@@ -38,10 +38,7 @@
 					<img src="{{asset('assets')}}/img/brand/logoAhlan.jpeg">
 				</div>
 			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
-				aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+			<h3 style = "color: white">Ahlan Eatery & Beverage</h3>
 			<div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
 				<div class="navbar-collapse-header">
 					<div class="row">
@@ -54,18 +51,6 @@
 						</div>
 					</div>
 				</div>
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-						<a href="login.html" class="nav-link">
-							<span class="nav-link-inner--text">Login</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="register.html" class="nav-link">
-							<span class="nav-link-inner--text">Register</span>
-						</a>
-					</li>
-				</ul>
 			</div>
 		</div>
 	</nav>
@@ -130,18 +115,6 @@
 		</div>
 	</div>
 	<!-- Argon Scripts -->
-
-	{{-- Footer --}}
-<footer class="py-5" id="footer-main">
-	<div class="container">
-		<div class="row align-items-center justify-content-xl-between">
-			<div class="col-xl-6">
-				<div class="copyright text-center text-xl-left text-muted">
-					&copy; Owl Coder 2020 
-				</div>
-			</div>
-		</div>
-	</div>
 	
 </body>
 	<!-- Core -->

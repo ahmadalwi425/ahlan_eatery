@@ -2,8 +2,8 @@
 
 
 @section('title')
-<h4>Create New Menu</h4>
+	<h4>Create New Extra</h4>
 @endsection
 @section('content')
-{{-- Form Here --}}
+	{{-- Form Here --}}
 @endsection
