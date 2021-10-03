@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\masakan;
+use DB;
 
 class masakanController extends Controller
 {
@@ -13,7 +15,8 @@ class masakanController extends Controller
      */
     public function index()
     {
-        //
+        $masakan = DB::table('masakan')->get();
+        return view ('pages.employee.indexMenu', compact('masakan'));
     }
 
     /**
@@ -23,7 +26,7 @@ class masakanController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.employee.createMenu');
     }
 
     /**
@@ -34,7 +37,17 @@ class masakanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id'=>'required',
+            'nama_masakan'=>'required',
+            'harga'=>'required',
+            'status'=>'required',
+        ]);
+
+        masakan::create($request->all());
+
+        return redirect()->route('pages.employee.indexMenu')
+            ->with('Sukses, masakan telah ditambahkan');
     }
 
     /**
@@ -45,7 +58,7 @@ class masakanController extends Controller
      */
     public function show($id)
     {
-        //
+       
     }
 
     /**
@@ -56,7 +69,8 @@ class masakanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $masakan = DB::table('masakan')->where('id', $id)->first();
+        return view('pages.employee.editMenu', compact('masakan'));
     }
 
     /**
@@ -68,7 +82,17 @@ class masakanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id'=>'required',
+            'nama_masakan'=>'required',
+            'harga'=>'required',
+            'status'=>'required',
+        ]);
+
+        masakan::find($id)->update($request->all());
+
+        return redirect()->route ('pages.employee.indexMenu')
+            ->with('Sukses, menu berhasil diperbarui');
     }
 
     /**
@@ -79,6 +103,8 @@ class masakanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        masakan::find($id)->delete();
+        return redirect()-> route('pages.employee.indexMenu')
+            ->with('Sukses, menu berhasil diperbarui');
     }
 }
