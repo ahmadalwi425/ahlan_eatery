@@ -58,7 +58,7 @@ class masakanController extends Controller
      */
     public function show($id)
     {
-       
+        //
     }
 
     /**
