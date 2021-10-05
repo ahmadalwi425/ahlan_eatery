@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class extraController extends Controller
 {
@@ -13,7 +14,8 @@ class extraController extends Controller
      */
     public function index()
     {
-        //
+        $extra = DB::table('extra')->get();
+        return view ('pages.waiter.menu.indexExtra', compact('extra'));
     }
 
     /**

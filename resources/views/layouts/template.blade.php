@@ -1,132 +1,256 @@
-<!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-
-
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+	<title>GURU Able - Free Lite Admin Template </title>
+	<!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+	<!-- Meta -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-	<meta name="author" content="Creative Tim">
-	<title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
-	<!-- Favicon -->
-	<link rel="icon" href="{{asset('assets')}}/img/brand/favicon.png" type="image/png">
-	<!-- Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-	<!-- Icons -->
-	<link rel="stylesheet" href="{{asset('assets')}}/vendor/nucleo/css/nucleo.css" type="text/css">
-	<link rel="stylesheet" href="{{asset('assets')}}/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-	<!-- Page plugins -->
-	<!-- Argon CSS -->
-	<link rel="stylesheet" href="{{asset('assets')}}/css/argon.css?v=1.2.0" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="CodedThemes">
+	<meta name="keywords"
+		content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+	<meta name="author" content="CodedThemes">
+	<!-- Favicon icon -->
+	<link rel="icon" href="{{asset('assets')}}/images/logo.jpeg" type="image/x-icon">
+	<!-- Google font-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+	<!-- Required Fremwork -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/bootstrap/css/bootstrap.min.css">
+	<!-- themify-icons line icon -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/icon/themify-icons/themify-icons.css">
+	<!-- ico font -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/icon/icofont/css/icofont.css">
+	<!-- Style.css -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/style.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/jquery.mCustomScrollbar.css">
 </head>
 
 <body>
-	<!-- Sidenav -->
-	@include('layouts.sidebarEmployee')
-	<!-- Main content -->
-	<div class="main-content" id="panel">
-		<!-- Topnav -->
-		<nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" style="background: #FFE58A">
-			<div class="container-fluid">
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<!-- Title -->
-						<h2>
-							@yield('title')
-						</h2>
-					<!-- Navbar links -->
-					<ul class="navbar-nav align-items-center  ml-md-auto ">
-						<li class="nav-item d-xl-none">
-							<!-- Sidenav toggler -->
-							<div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin"
-								data-target="#sidenav-main">
-								<div class="sidenav-toggler-inner">
-									<i class="sidenav-toggler-line"></i>
-									<i class="sidenav-toggler-line"></i>
-									<i class="sidenav-toggler-line"></i>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false">
-								<i class="ni ni-bell-55" style="color: black"></i>
-							</a>
-							<div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">						
-								@include('layouts.notification')
-							</div>
-						</li>
-					</ul>
-					<ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
-						<li class="nav-item dropdown">
-							<a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false">
-								<div class="media align-items-center">
-									<span class="avatar avatar-sm rounded-circle">
-										<img alt="Image placeholder" src="assets/img/theme/team-4.jpg">
-									</span>
-									<div class="media-body  ml-2  d-none d-lg-block">
-										<span class="mb-0 text-sm  font-weight-bold" style="color: black">John Snow</span>
-									</div>
-								</div>
-							</a>
-							<div class="dropdown-menu  dropdown-menu-right ">
-								<div class="dropdown-header noti-title">
-									<h6 class="text-overflow m-0">Welcome!</h6>
-								</div>
-								<a href="#!" class="dropdown-item">
-									<i class="ni ni-single-02"></i>
-									<span>My profile</span>
-								</a>
-								<a href="#!" class="dropdown-item">
-									<i class="ni ni-user-run"></i>
-									<span>Logout</span>
-								</a>
-							</div>
-						</li>
-					</ul>
+	<!-- Pre-loader start -->
+	<div class="theme-loader">
+		<div class="ball-scale">
+			<div class='contain'>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
 				</div>
 			</div>
-		</nav>
-		<!-- Header -->
-
-		{{-- Content --}}
-	<section>
-		<div class="container-fluid">
-			@yield('content')
 		</div>
-	</section>
-
-
-
-		{{-- Footer --}}
-
 	</div>
-	<!-- Argon Scripts -->
-	<!-- Core -->
-	<script src="{{asset('assets')}}/vendor/jquery/dist/jquery.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/js-cookie/js.cookie.js"></script>
-	<script src="{{asset('assets')}}/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-	<!-- Optional JS -->
-	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.extension.js"></script>
-	<!-- Argon JS -->
-	<script src="{{asset('assets')}}/js/argon.js?v=1.2.0"></script>
+	<!-- Pre-loader end -->
+	<div id="pcoded" class="pcoded">
+		<div class="pcoded-overlay-box"></div>
+		<div class="pcoded-container navbar-wrapper">
+
+			<nav class="navbar header-navbar pcoded-header">
+				<div class="navbar-wrapper">
+
+					<div class="navbar-logo" style="background: #272725">
+						<a class="mobile-menu" id="mobile-collapse" href="#!">
+							<i class="ti-menu"></i>
+						</a>
+						<a class = "mt-3 text-center">
+							<img class="img-fluid" src="{{asset('assets')}}/images/logo.jpeg" alt="Theme-Logo" style="height: 40px" />
+							<p>Ahlan Eatery & Beverage</p>
+						</a>
+						<a class="mobile-options">
+							<i class="ti-more"></i>
+						</a>
+					</div>
+
+					<div class="navbar-container container-fluid">
+						<ul class="nav-left">
+							<li>
+								<div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
+								</div>
+							</li>
+
+							<li>
+								<a href="#!" onclick="javascript:toggleFullScreen()">
+									<i class="ti-fullscreen"></i>
+								</a>
+							</li>
+						</ul>
+						<ul class="nav-right">
+							<li class="header-notification">
+								<a href="#!">
+									<i class="ti-bell"></i>
+									<span class="badge bg-c-pink"></span>
+								</a>
+								@include('layouts.notification')
+							</li>
+							<li class="user-profile header-notification">
+								<a href="#!">
+									<img src="{{asset('assets')}}/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+									<span>John Doe</span>
+									<i class="ti-angle-down"></i>
+								</a>
+								<ul class="show-notification profile-notification">
+									<li>
+										<a href="#">
+											<i class="ti-user"></i> Profile
+										</a>
+									</li>
+									<li>
+										<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+											<i class="ti-layout-sidebar-left"></i> Logout
+										</a>
+										<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+											@csrf
+										</form>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="pcoded-main-container">
+				<div class="pcoded-wrapper">
+					@include('layouts.sidebar')
+					<div class="pcoded-content">
+						<div class="pcoded-inner-content">
+							<div class="main-body">
+								<div class="page-wrapper">									
+									<div class="page-body">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="card">
+													<div class="card-header">
+														<span></span>
+													</div>
+													<div class="card-block">
+														@yield('content')
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+
+								<div id="styleSelector">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Warning Section Starts -->
+	<!-- Older IE warning message -->
+	<!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+	<!-- Warning Section Ends -->
+	<!-- Required Jquery -->
+	<script type="text/javascript" src="{{asset('assets')}}/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/popper.js/popper.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/bootstrap/js/bootstrap.min.js"></script>
+	<!-- jquery slimscroll js -->
+	<script type="text/javascript" src="{{asset('assets')}}/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<!-- modernizr js -->
+	<script type="text/javascript" src="{{asset('assets')}}/js/modernizr/modernizr.js"></script>
+	<!-- am chart -->
+	<script src="{{asset('assets')}}/pages/widget/amchart/amcharts.min.js"></script>
+	<script src="{{asset('assets')}}/pages/widget/amchart/serial.min.js"></script>
+	<!-- Todo js -->
+	<script type="text/javascript " src="{{asset('assets')}}/pages/todo/todo.js "></script>
+	<!-- Custom js -->
+	<script type="text/javascript" src="{{asset('assets')}}/pages/dashboard/custom-dashboard.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/script.js"></script>
+	<script type="text/javascript " src="{{asset('assets')}}/js/SmoothScroll.js"></script>
+	<script src="{{asset('assets')}}/js/pcoded.min.js"></script>
+	<script src="{{asset('assets')}}/js/demo-12.js"></script>
+	<script src="{{asset('assets')}}/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script>
+		var $window = $(window);
+        var nav = $('.fixed-button');
+        $window.scroll(function () {
+            if ($window.scrollTop() >= 200) {
+                nav.addClass('active');
+            } else {
+                nav.removeClass('active');
+            }
+        });
+	</script>
 </body>
 
 </html>

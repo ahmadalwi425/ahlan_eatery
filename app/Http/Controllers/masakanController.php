@@ -8,33 +8,20 @@ use DB;
 
 class masakanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $masakan = DB::table('masakan')->get();
-        return view ('pages.employee.indexMenu', compact('masakan'));
+        return view ('pages.waiter.menu.indexMenu', compact('masakan'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        return view('pages.employee.createMenu');
+        return view('pages.waiter.menu.createMenu');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -46,40 +33,22 @@ class masakanController extends Controller
 
         masakan::create($request->all());
 
-        return redirect()->route('pages.employee.indexMenu')
+        return redirect()->route('masakan.index')
             ->with('Sukses, masakan telah ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $masakan = DB::table('masakan')->where('id', $id)->first();
-        return view('pages.employee.editMenu', compact('masakan'));
+        return view('pages.waiter.menu.editMenu', compact('masakan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -91,20 +60,15 @@ class masakanController extends Controller
 
         masakan::find($id)->update($request->all());
 
-        return redirect()->route ('pages.employee.indexMenu')
+        return redirect()->route ('masakan.index')
             ->with('Sukses, menu berhasil diperbarui');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         masakan::find($id)->delete();
-        return redirect()-> route('pages.employee.indexMenu')
+        return redirect()-> route('masakan.index')
             ->with('Sukses, menu berhasil diperbarui');
     }
 }
