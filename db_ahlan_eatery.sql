@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2021 at 01:38 PM
+-- Generation Time: Oct 05, 2021 at 03:36 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -72,7 +72,8 @@ CREATE TABLE `masakan` (
   `nama_masakan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_jenis` bigint(20) NOT NULL,
   `harga` int(11) NOT NULL,
-  `status` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'tersedia'
+  `status` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'tersedia',
+  `gambar` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -176,6 +177,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `level` int(11) NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -185,8 +187,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@admin.com', NULL, '$2y$10$algjImFnTaRIXaCj3382NeHQp5gX7Jl2toVBPBBKz3fnDdiTkZgbC', NULL, '2021-09-16 06:20:41', '2021-09-16 06:20:41');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `level`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin@admin.com', NULL, '$2y$10$algjImFnTaRIXaCj3382NeHQp5gX7Jl2toVBPBBKz3fnDdiTkZgbC', 1, NULL, '2021-09-16 06:20:41', '2021-09-16 06:20:41'),
+(3, 'waiter', 'waiter@admin.com', NULL, '$2y$10$algjImFnTaRIXaCj3382NeHQp5gX7Jl2toVBPBBKz3fnDdiTkZgbC', 2, NULL, '2021-09-16 06:20:41', '2021-09-16 06:20:41');
 
 --
 -- Indexes for dumped tables
@@ -316,7 +319,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
