@@ -24,13 +24,14 @@
 
 	<table class="table table-bordered">
 		<tr>
-			<th>Id</th>
+			<th>No</th>
 			<th>Nama Jenis</th>
 			<th width="280px">Action</th>
 		</tr>
+		@php $no = 1; @endphp
 		@foreach ($jenisMasakan as $item)
 		<tr>
-			<td>{{ $item->id }}</td>
+			<td>{{$no++}}</td>
 			<td>{{ $item->nama_jenis }}</td>
 			<td>
 				<form action="{{ route('jenis_masakan.destroy',['jenis_masakan'=>$item->id]) }}" method="POST">

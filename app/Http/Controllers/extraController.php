@@ -3,84 +3,68 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\extra;
 use DB;
 
 class extraController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $extra = DB::table('extra')->get();
-        return view ('pages.waiter.menu.indexExtra', compact('extra'));
+        return view ('pages.waiter.menu.indexMenuExtra', compact('extra'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        return view('pages.waiter.menu.createMenuExtra');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_extra'=>'required',
+            'harga' => 'required'
+        ]);
+
+        extra::create($request->all());
+        return redirect()->route('extra.index')
+            ->with('Sukses, menu extra telah ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        //
+        $extra = DB::table('extra')->where('id', $id)->first();
+        return view('pages.waiter.menu.editMenuExtra', compact('extra'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+         $request->validate([
+            'nama_extra'=>'required',
+            'harga' => 'required'
+        ]);;
+
+        extra::find($id)->update($request->all());
+
+        return redirect()->route ('extra.index')
+            ->with('Sukses, menu extra berhasil diperbarui');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
-        //
+        jenis_masakan::find($id)->delete();
+        return redirect()->route('extra.index')
+            ->with('Sukses, menu extra berhasil dihapus');
     }
 }
