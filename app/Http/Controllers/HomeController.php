@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use DB;
 
 class HomeController extends Controller
 {
@@ -25,10 +26,11 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::User()->level == 1){
-            return redirect('masakan');
+            return view('pages.admin.index');
         }else{
-            return view('home');
+
+        $masakan = DB::table('masakan')->get();
+        return view ('pages.waiter.menu.indexMenu', compact('masakan'));
         }
-        
     }
 }

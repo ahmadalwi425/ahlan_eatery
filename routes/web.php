@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\masakanController;
+use App\Http\Controllers\jenis_masakanController;
+use App\Http\Controllers\extraController;
 use Illuminate\Http\Request;
 
 /*
@@ -16,7 +18,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -26,4 +28,10 @@ Route::get('/pesan/{id}', [App\Http\Controllers\orderController::class, 'pesanme
 Route::post('/pesan', [App\Http\Controllers\orderController::class, 'tampilpesan']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('masakan', masakanController::class);
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('masakan', masakanController::class);
+    Route::resource('jenis_masakan', jenis_masakanController::class);
+    Route::resource('extra', extraController::class);
+});

@@ -1,131 +1,141 @@
-<!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+	<title>GURU Able - Free Lite Admin Template </title>
+	<!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+	<!-- Meta -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-	<meta name="author" content="Creative Tim">
-	<title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
-	<!-- Favicon -->
-	<link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
-	<!-- Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-	<!-- Icons -->
-	<link rel="stylesheet" href="../assets/vendor/nucleo/css/nucleo.css" type="text/css">
-	<link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-	<!-- Argon CSS -->
-	<link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="CodedThemes">
+	<meta name="keywords"
+		content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+	<meta name="author" content="CodedThemes">
+	<!-- Favicon icon -->
+	<link rel="icon" href="{{asset('assets')}}/images/favicon.ico" type="image/x-icon">
+	<!-- Google font-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+	<!-- Required Fremwork -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/bootstrap/css/bootstrap.min.css">
+	<!-- themify-icons line icon -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/icon/themify-icons/themify-icons.css">
+	<!-- ico font -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/icon/icofont/css/icofont.css">
+	<!-- Style.css -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/style.css">
 </head>
 
-<body style="background: #272725">
-	<!-- Navbar -->
-	<nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
-		<div class="container">
-			<a class="navbar-brand" href="dashboard.html">
-				<div style="display: flex">
-					<img src="{{asset('assets')}}/img/brand/logoAhlan.jpeg">
+<body class="fix-menu">
+	<!-- Pre-loader start -->
+	<div class="theme-loader">
+		<div class="ball-scale">
+			<div class='contain'>
+				<div class="ring">
+					<div class="frame"></div>
 				</div>
-			</a>
-			<h3 style = "color: white">Ahlan Eatery & Beverage</h3>
-			<div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
-				<div class="navbar-collapse-header">
-					<div class="row">
-						<div class="col-6 collapse-close">
-							<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse"
-								aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-								<span></span>
-								<span></span>
-							</button>
-						</div>
-					</div>
+				<div class="ring">
+					<div class="frame"></div>
 				</div>
-			</div>
-		</div>
-	</nav>
-	<!-- Main content -->
-	<div class="main-content">
-		<!-- Header -->
-		<div class="header py-7 py-lg-8 pt-lg-5" style="background:#F0AD03">
-			<div class="container">
-				<div class="header-body text-center mb-5">
-							<h1 class="text-white">Login</h1>
+				<div class="ring">
+					<div class="frame"></div>
 				</div>
-			</div>
-		</div>
-		<!-- Page content -->
-		<div class="container mt--8 pb-6">
-			<div class="row justify-content-center">
-				<div class="col-lg-5 col-md-7">
-					<div class="card bg-secondary border-0 mb-0">
-						<div class="card-body px-lg-5 py-lg-5">
-							<div class="text-center text-muted mb-4">
-								<small>Enter username and password</small>
-							</div>
-							<form role="form" action="{{ route('login') }}" method="POST">
-							@csrf
-								<div class="form-group mb-3">
-									<div class="input-group input-group-merge input-group-alternative">
-										<div class="input-group-prepend">
-											<span class="input-group-text"><i class="ni ni-single-02"></i></span>
-										</div>
-										<input class="form-control" placeholder="name" name="name" type="name">
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="input-group input-group-merge input-group-alternative">
-										<div class="input-group-prepend">
-											<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-										</div>
-										<input class="form-control" placeholder="Password" name="password" type="password">
-									</div>
-								</div>
-								<div class="custom-control custom-control-alternative custom-checkbox">
-									<input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-									<label class="custom-control-label" for=" customCheckLogin">
-										<span class="text-muted">Remember me</span>
-									</label>
-								</div>
-								<div class="text-center">
-									<button type="submit" class="btn btn-primary my-4">Sign in</button>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="row mt-3">
-						<div class="col-6">
-							<a href="#" class="text-light"><small>Forgot password?</small></a>
-						</div>
-						<div class="col-6 text-right">
-							<a href="#" class="text-light"><small>Create new account</small></a>
-						</div>
-					</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
+				</div>
+				<div class="ring">
+					<div class="frame"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- Argon Scripts -->
-	
-</body>
-	<!-- Core -->
-	<script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
-	<script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="../assets/vendor/js-cookie/js.cookie.js"></script>
-	<script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-	<script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-	<!-- Argon JS -->
-	<script src="../assets/js/argon.js?v=1.2.0"></script>
+	<!-- Pre-loader end -->
+
+	<section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+		<!-- Container-fluid starts -->
+		<div class="container">
+
+			@yield('content')
+			
+			<!-- end of row -->
+		</div>
+		<!-- end of container-fluid -->
+	</section>
+	<!-- Warning Section Starts -->
+	<!-- Older IE warning message -->
+	<!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+	<!-- Warning Section Ends -->
+	<!-- Required Jquery -->
+	<script type="text/javascript" src="{{asset('assets')}}/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/popper.js/popper.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/bootstrap/js/bootstrap.min.js"></script>
+	<!-- jquery slimscroll js -->
+	<script type="text/javascript" src="{{asset('assets')}}/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<!-- modernizr js -->
+	<script type="text/javascript" src="{{asset('assets')}}/js/modernizr/modernizr.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/modernizr/css-scrollbars.js"></script>
+	<script type="text/javascript" src="{{asset('assets')}}/js/common-pages.js"></script>
 </body>
 
 </html>
