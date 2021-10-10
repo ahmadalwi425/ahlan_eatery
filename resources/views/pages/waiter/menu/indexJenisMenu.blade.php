@@ -35,10 +35,10 @@
 			<td>{{ $item->nama_jenis }}</td>
 			<td>
 				<form action="{{ route('jenis_masakan.destroy',['jenis_masakan'=>$item->id]) }}" method="POST">
-					<a class="btn btn-primary" href=" {{route('jenis_masakan.edit',$item->id) }}">Edit</a>
+					<a class="btn btn-warning" href=" {{route('jenis_masakan.edit',$item->id) }}"><i class="ti-marker-alt"></i></a>
 					@csrf
 					@method('DELETE')
-					<button type="submit" class="btn btn-danger">Delete</button>
+					<button type="submit" class="btn btn-danger"><i class="ti-trash"></i></button>
 				</form>
 			</td>
 		</tr>
