@@ -12,7 +12,6 @@
 					<span class="pcoded-mcaret"></span>
 				</a>
 			</li>
-		</ul>
 
 		@elseif(Auth::user()->level ==  2)
 		<ul class="pcoded-item pcoded-left-item">
@@ -61,16 +60,14 @@
 				</ul>
 
 				@endif
-				<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Log Out</div>
+				<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" class = "mt--6">Log Out</div>
 				<li class="active">
-					<a href="index.html">
 						<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 							<i class="ti-layout-sidebar-left"></i> Logout
 						</a>
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
 							@csrf
 						</form>
-					</a>
 				</li>
 			</li>
 		</ul>
