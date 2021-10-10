@@ -25,7 +25,7 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>Id</th>
+        <th>No</th>
         <th>Nama Masakan</th>
         <th>Jenis Masakan</th>
         <th>Harga</th>
@@ -33,11 +33,12 @@
         <th>Gambar</th>
         <th width="280px">Action</th>
     </tr>
+    @php $no = 1; @endphp
     @foreach ($masakan as $msk)
     <tr>
-        <td>{{ $msk->id }}</td>
-        <td>{{ $msk->jenis_masakan->nama_jenis}}</td>
+        <td>{{$no++}}</td>
         <td>{{ $msk->nama_masakan }}</td>
+        <td>{{ $msk->jenis_masakan->nama_jenis}}</td>
         <td>{{ $msk->harga }}</td>
         <td>{{ $msk->status }}</td>
         <th><img width=" 80px" src="{{asset('storage/'.$msk->gambar) }}"></th>

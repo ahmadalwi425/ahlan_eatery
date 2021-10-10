@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\masakan;
 use App\Models\jenis_masakan;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
 class masakanController extends Controller
 {
@@ -63,21 +64,41 @@ class masakanController extends Controller
 
     public function edit($id)
     {
-        $masakan = DB::table('masakan')->where('id', $id)->first();
-        return view('pages.waiter.menu.editMenu', compact('masakan'));
+        $masakan = masakan::with('jenis_masakan')->where('id', $id)->first();
+        $jenis_masakan = jenis_masakan::all();
+        return view('pages.waiter.menu.editMenu', compact('masakan', 'jenis_masakan'));
     }
 
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id'=>'required',
-            'nama_masakan'=>'required',
-            'harga'=>'required',
-            'status'=>'required',
+            'nama_masakan'=>'nullable',
+            'jenis_masakan_id' => 'nullable',
+            'harga'=>'nullable',
+            'status'=>'nullable',
+            'gambar' => 'nullable'
         ]);
 
-        masakan::find($id)->update($request->all());
+        // dd($request->get('nama_masakan'));
+         $masakan = masakan::with('jenis_masakan')->where('id', $id)->first();
+        if ($request->file('gambar')) {
+            if($masakan->gambar && file_exists(storage_path('app/public/' . $masakan->gambar))) {
+                Storage::delete('public/' . $masakan->gambar);
+                $image_name = $request->file('gambar')->store('images', 'public');
+                $masakan->gambar = $image_name;
+            }
+        }
+
+        $masakan->nama_masakan = $request->get('nama_masakan');
+        $masakan->status = $request->get('status');
+        $masakan->harga = $request->get('harga');
+        $jenis_masakan = new jenis_masakan;
+        $jenis_masakan->id = $request->get('jenis_masakan_id');
+
+
+        $masakan->jenis_masakan()->associate($jenis_masakan);
+        $masakan->save();
 
         return redirect()->route ('masakan.index')
             ->with('Sukses, menu berhasil diperbarui');
