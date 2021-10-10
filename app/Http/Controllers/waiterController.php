@@ -79,6 +79,8 @@ class waiterController extends Controller
     
     public function destroy($id)
     {
-        //
+        $waiter = user::find($id)->delete();
+        return redirect()->route('waiter.index')
+            ->with('Sukses, Waiter berhasil dihapus');
     }
 }
