@@ -174,6 +174,71 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
+=======
+	</div>
+	<!-- Argon Scripts -->
+	<!-- Core -->
+	<script src="{{asset('assets')}}/vendor/jquery/dist/jquery.min.js"></script>
+	<script src="{{asset('assets')}}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="{{asset('assets')}}/vendor/js-cookie/js.cookie.js"></script>
+	<script src="{{asset('assets')}}/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="{{asset('assets')}}/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+	<!-- Optional JS -->
+	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.min.js"></script>
+	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.extension.js"></script>
+	<!-- Argon JS -->
+	<script src="{{asset('assets')}}/js/argon.js?v=1.2.0"></script>
+	<script src="{{asset('assets/js/push.min.js')}}"></script>
+	<script>
+		Push.create('Pesanan Baru',{
+			Body : "Halo dsfdsfdsfsdf",
+			timeout : 5000
+		});
+	<!-- Warning Section Starts -->
+	<!-- Older IE warning message -->
+	<!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+>>>>>>> 6f37293776c876a0e72088cb5746879a61a84b4a
 	<!-- Warning Section Ends -->
 	<!-- Required Jquery -->
 	<script type="text/javascript" src="{{asset('assets/js/jquery/jquery.min.js')}}"></script>
