@@ -107,7 +107,9 @@ class masakanController extends Controller
 
     public function destroy($id)
     {
-        masakan::find($id)->delete();
+        $masakan = masakan::find($id)->first();
+        Storage::delete('public/' . $masakan->gambar);
+        $masakan->delete();
         return redirect()-> route('masakan.index')
             ->with('Sukses, menu berhasil diperbarui');
     }
