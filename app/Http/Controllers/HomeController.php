@@ -30,7 +30,11 @@ class HomeController extends Controller
         }else{
 
         $masakan = DB::table('masakan')->get();
-        return view ('pages.waiter.menu.indexMenu', compact('masakan'));
+            return redirect()->route('masakan.index');
         }
+    }
+    public function scan()
+    {
+        return view('qrcode.scan');
     }
 }

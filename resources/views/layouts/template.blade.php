@@ -122,11 +122,11 @@
 								<ul class="show-notification profile-notification">
 									<li>
 										<a href="#">
-											<i class="ti-user"></i> Profile
+											<i class="ti-user"></i> Profiles
 										</a>
 									</li>
 									<li>
-										<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+										<a onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 											<i class="ti-layout-sidebar-left"></i> Logout
 										</a>
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -173,7 +173,7 @@
 			</div>
 		</div>
 	</div>
-
+		
 	</div>
 	<!-- Argon Scripts -->
 	<!-- Core -->
@@ -188,11 +188,18 @@
 	<!-- Argon JS -->
 	<script src="{{asset('assets')}}/js/argon.js?v=1.2.0"></script>
 	<script src="{{asset('assets/js/push.min.js')}}"></script>
+	<script src="{{asset('assets/js/jquery/jquery-2.1.1.min.js')}}" type="text/javascript"></script>
 	<script>
-		Push.create('Pesanan Baru',{
-			Body : "Halo dsfdsfdsfsdf",
-			timeout : 5000
-		});
+		
+		function notif_me() {
+			Push.create('Pesanan Baru',{
+			});
+		}
+		
+		// setTimeout(function() {
+		// 	notif_me();
+		// },5000);
+	</script>
 	<!-- Warning Section Starts -->
 	<!-- Older IE warning message -->
 	<!--[if lt IE 9]>
@@ -238,26 +245,26 @@
 <![endif]-->
 	<!-- Warning Section Ends -->
 	<!-- Required Jquery -->
-	<script type="text/javascript" src="{{asset('assets')}}/js/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="{{asset('assets')}}/js/jquery-ui/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="{{asset('assets')}}/js/popper.js/popper.min.js"></script>
-	<script type="text/javascript" src="{{asset('assets')}}/js/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets/js/jquery/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('assets/js/jquery-ui/jquery-ui.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('assets/js/popper.js/popper.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('assets/js/bootstrap/js/bootstrap.min.js')}}"></script>
 	<!-- jquery slimscroll js -->
-	<script type="text/javascript" src="{{asset('assets')}}/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script type="text/javascript" src="{{asset('assets/js/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
 	<!-- modernizr js -->
-	<script type="text/javascript" src="{{asset('assets')}}/js/modernizr/modernizr.js"></script>
+	<script type="text/javascript" src="{{asset('assets/js/modernizr/modernizr.js')}}"></script>
 	<!-- am chart -->
-	<script src="{{asset('assets')}}/pages/widget/amchart/amcharts.min.js"></script>
-	<script src="{{asset('assets')}}/pages/widget/amchart/serial.min.js"></script>
+	<script src="{{asset('assets/pages/widget/amchart/amcharts.min.js')}}"></script>
+	<script src="{{asset('assets/pages/widget/amchart/serial.min.js')}}"></script>
 	<!-- Todo js -->
-	<script type="text/javascript " src="{{asset('assets')}}/pages/todo/todo.js "></script>
+	<script type="text/javascript " src="{{asset('assets/pages/todo/todo.js')}}"></script>
 	<!-- Custom js -->
-	<script type="text/javascript" src="{{asset('assets')}}/pages/dashboard/custom-dashboard.js"></script>
-	<script type="text/javascript" src="{{asset('assets')}}/js/script.js"></script>
-	<script type="text/javascript " src="{{asset('assets')}}/js/SmoothScroll.js"></script>
-	<script src="{{asset('assets')}}/js/pcoded.min.js"></script>
-	<script src="{{asset('assets')}}/js/demo-12.js"></script>
-	<script src="{{asset('assets')}}/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="{{asset('assets/pages/dashboard/custom-dashboard.js')}}"></script>
+	<script type="text/javascript" src="{{asset('assets/js/script.js')}}"></script>
+	<script type="text/javascript " src="{{asset('assets/js/SmoothScroll.js')}}"></script>
+	<script src="{{asset('assets/js/pcoded.min.js')}}"></script>
+	<script src="{{asset('assets/js/demo-12.js')}}"></script>
+	<script src="{{asset('assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 	<script>
 		var $window = $(window);
         var nav = $('.fixed-button');
