@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use App\Models\masakan;
+use App\Models\jenis_masakan;
+use App\Models\User;
+
 
 class HomeController extends Controller
 {
@@ -26,11 +30,12 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::User()->level == 1){
-            return view('pages.admin.index');
+            $waiter = User::where('level', '2')->get();
+            // dd($waiter);
+            return view('pages.admin.indexWaiter', compact('waiter'));
         }else{
-
-        $masakan = DB::table('masakan')->get();
-            return redirect()->route('masakan.index');
+        $masakan = masakan::with('jenis_masakan')->get();
+        return view ('pages.waiter.menu.indexMenu', compact('masakan'));
         }
     }
     public function scan()

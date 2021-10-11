@@ -67,3 +67,5 @@ class jenis_masakanController extends Controller
             ->with('Sukses, menu berhasil dihapus');
     }
 }
+
+

@@ -18,18 +18,18 @@
 		content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
 	<meta name="author" content="CodedThemes">
 	<!-- Favicon icon -->
-	<link rel="icon" href="{{asset('assets')}}/images/logo.jpeg" type="image/x-icon">
+	<link rel="icon" href="{{asset('assets/images/logo.jpeg')}}" type="image/x-icon">
 	<!-- Google font-->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 	<!-- Required Fremwork -->
-	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap/css/bootstrap.min.css')}}">
 	<!-- themify-icons line icon -->
-	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/icon/themify-icons/themify-icons.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/icon/themify-icons/themify-icons.css')}}">
 	<!-- ico font -->
-	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/icon/icofont/css/icofont.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/icon/icofont/css/icofont.css')}}">
 	<!-- Style.css -->
-	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/style.css">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
 </head>
 
 <body>
@@ -177,11 +177,11 @@
 	</div>
 	<!-- Argon Scripts -->
 	<!-- Core -->
-	<script src="{{asset('assets')}}/vendor/jquery/dist/jquery.min.js"></script>
+	{{-- <script src="{{asset('assets')}}/vendor/jquery/dist/jquery.min.js"></script>
 	<script src="{{asset('assets')}}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="{{asset('assets')}}/vendor/js-cookie/js.cookie.js"></script>
 	<script src="{{asset('assets')}}/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+	<script src="{{asset('assets')}}/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script> --}}
 	<!-- Optional JS -->
 	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.min.js"></script>
 	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.extension.js"></script>

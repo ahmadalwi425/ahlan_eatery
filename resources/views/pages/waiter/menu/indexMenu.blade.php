@@ -25,24 +25,29 @@
 <button onClick="notif_me()"> tes </button>
 <table class="table table-bordered">
     <tr>
-        <th>Id</th>
+        <th>No</th>
         <th>Nama Masakan</th>
+        <th>Jenis Masakan</th>
         <th>Harga</th>
         <th>Status</th>
+        <th>Gambar</th>
         <th width="280px">Action</th>
     </tr>
+    @php $no = 1; @endphp
     @foreach ($masakan as $msk)
     <tr>
-        <td>{{ $msk->id }}</td>
+        <td>{{$no++}}</td>
         <td>{{ $msk->nama_masakan }}</td>
+        <td>{{ $msk->jenis_masakan->nama_jenis}}</td>
         <td>{{ $msk->harga }}</td>
         <td>{{ $msk->status }}</td>
+        <th><img width=" 80px" src="{{asset('storage/'.$msk->gambar) }}"></th>
         <td>
             <form action="{{ route('masakan.destroy',['masakan'=>$msk->id]) }}" method="POST">
-                <a class="btn btn-primary" href=" {{route('masakan.edit',$msk->id) }}">Edit</a>
+                <a class="btn btn-primary" href=" {{route('masakan.edit',$msk->id) }}"><i class="ti-marker-alt"></i></a>
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger"><i class="ti-trash"></i></button>
             </form>
         </td>
     </tr>

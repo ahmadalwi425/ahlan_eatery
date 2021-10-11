@@ -15,30 +15,40 @@
         </ul>
     </div>
     @endif
-    <form method="post" action="{{ route('masakan.store') }}" id="myForm">
+    <h3 class = "mb-3">Tambah Data Masakan</h3>
+    <form method="post" action="{{ route('masakan.store') }}" id="myForm" enctype="multipart/form-data">
     @csrf
         <div class="form-group">
-            <label for="id">Id</label>
-            <input type="text" name="id" class="form-control" id="id" aria-describedby="id">
-        </div>
-        <div class="form-group">
             <label for="nama_masakan">Nama Masakan</label>
-
             <input type="nama_masakan" name="nama_masakan" class="form-control" id="nama_masakan" aria- describedby="nama_masakan">
 
         </div>
         <div class="form-group">
+            <label for="jenis_masakan">Jenis Masakan</label>
+        
+            <select name="jenis_masakan_id" id="jenis_masakan_id" class="form-control">
+                @foreach($jenis_masakan as $jm)
+                <option value="{{$jm->id}}">{{$jm->nama_jenis}}</option>
+                @endforeach
+            </select>
+        
+        </div>
+        <div class="form-group">
             <label for="harga">Harga</label>
-
             <input type="harga" name="harga" class="form-control" id="harga" aria- describedby="harga">
-
         </div>
         <div class="form-group">
             <label for="status">Status</label>
-
-            <input type="status" name="status" class="form-control" id="status" aria- describedby="status">
-
+            <select name="status" id="status" class="form-control">
+                <option value="tersedia">Tersedia</option>
+                <option value="kosong">Kosong</option>
+            </select>
         </div>
+        <div class="form-group">
+            <label for="gambar">Foto Masakan</label>
+            <input type="file" class="form-control" id="gambar" name="gambar">
+        </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

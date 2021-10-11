@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\masakanController;
 use App\Http\Controllers\jenis_masakanController;
 use App\Http\Controllers\extraController;
+use App\Http\Controllers\waiterController;
 use Illuminate\Http\Request;
 
 /*
@@ -37,4 +38,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('masakan', masakanController::class);
     Route::resource('jenis_masakan', jenis_masakanController::class);
     Route::resource('extra', extraController::class);
+    Route::resource('waiter', waiterController::class);
 });
