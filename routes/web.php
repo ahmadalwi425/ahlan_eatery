@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\masakanController;
 use App\Http\Controllers\jenis_masakanController;
 use App\Http\Controllers\extraController;
-use App\Http\Controllers\waiterController;
+use App\Http\Controllers\orderController;
 use Illuminate\Http\Request;
 
 /*
@@ -22,13 +22,13 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Auth::routes();
 
-Route::get('/pesan/{id}', [App\Http\Controllers\orderController::class, 'pesanmeja']);
+Route::get('/pesan/meja/{id}', [App\Http\Controllers\orderController::class, 'pesanmeja']);
+Route::post('/pesan', [App\Http\Controllers\orderController::class, 'dataPesanan']);
+Route::resource('order', orderController::class);
 
-Route::post('/pesan', [App\Http\Controllers\orderController::class, 'tampilpesan']);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::middleware(['auth'])->group(function () {
