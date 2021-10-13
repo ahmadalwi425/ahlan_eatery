@@ -23,11 +23,21 @@ Route::get('/', function () {
 });
 
 
+
 Auth::routes();
+
+Route::post('/pesanmeja', [App\Http\Controllers\orderController::class, 'pesanmeja']);
+Route::get('/scan', [App\Http\Controllers\homeController::class, 'scan']);
+
 
 Route::get('/pesan/meja/{id}', [App\Http\Controllers\orderController::class, 'pesanmeja']);
 Route::post('/pesan', [App\Http\Controllers\orderController::class, 'dataPesanan']);
 Route::resource('order', orderController::class);
+
+
+Route::any('cekorder', [App\Http\Controllers\orderController::class, 'cekorder']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 

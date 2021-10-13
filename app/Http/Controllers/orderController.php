@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\order;
 use App\Models\masakan;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class orderController extends Controller
 {
@@ -18,9 +19,10 @@ class orderController extends Controller
 
     }
 
-    public function pesanmeja($nomeja)
+    public function pesanmeja(Request $request)
     {
-        $no_table = $nomeja;
+        $no_table = $request->no_meja;
+
         do{
             $no_pesanan = random_int(100000, 999999);
         }while(order::where('id',$no_pesanan)->get()->count() > 0);
@@ -53,6 +55,15 @@ class orderController extends Controller
     public function create()
     {
         //
+    }
+    public function cekorder()
+    {
+        $stat = false;
+        $kondisi = "diproses";
+        if(order::where('status_order',$kondisi)->get()->count() > 0){
+            $stat = true;
+        }
+        return $stat;
     }
 
     
