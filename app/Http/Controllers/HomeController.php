@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        dd('yes');
+        // dd('yes');
         if(Auth::User()->level == 1){
             $waiter = User::where('level', '2')->get();
             // dd($waiter);
