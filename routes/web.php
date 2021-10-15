@@ -31,9 +31,9 @@ Route::post('/pesan', [App\Http\Controllers\orderController::class, 'tampilpesan
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/meja', [mejaController::class, 'index']);
-Route::post('/meja', [mejaController::class, 'store'])->name('store');
-Route::get('qrcode/{id}', [mejaController::class, 'generate'])->name('generate');
+//Route::get('/meja', [mejaController::class, 'index']);
+//Route::post('/meja', [mejaController::class, 'store'])->name('store');
+//Route::get('qrcode/{id}', [mejaController::class, 'generate'])->name('generate');
 
 
 Route::middleware(['auth'])->group(function () {
