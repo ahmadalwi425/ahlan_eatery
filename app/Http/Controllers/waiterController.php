@@ -29,7 +29,7 @@ class waiterController extends Controller
             'name'=>'required',
             'email' => 'required',
             'level'=>'required',
-            'password' => 'password'
+            'password' => 'required',
         ]);
         $waiter = new User;
         $waiter->name = $request->get('name');

@@ -15,7 +15,7 @@
 	</ul>
 </div>
 @endif
-<h4 class="mb-3">Masukan Jenis Masakan Baru</h4>
+<h4 class="mb-3">Masukan Karyawan Baru</h4>
 <form method="post" action="{{ route('waiter.store') }}" id="myForm">
 	@csrf
 	<div class="form-group">
