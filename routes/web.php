@@ -26,12 +26,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::post('/pesanmeja', [App\Http\Controllers\orderController::class, 'pesanmeja']);
+// Route::post('/pesanmeja', [App\Http\Controllers\orderController::class, 'pesanmeja']);
 Route::get('/scan', [App\Http\Controllers\homeController::class, 'scan']);
 
 
 Route::get('/pesan/meja/{id}', [App\Http\Controllers\orderController::class, 'pesanmeja']);
 Route::post('/pesan', [App\Http\Controllers\orderController::class, 'dataPesanan']);
+Route::post('/order/list', [App\Http\Controllers\orderController::class, 'orderList'])->name('orderList');
 Route::resource('order', orderController::class);
 
 
