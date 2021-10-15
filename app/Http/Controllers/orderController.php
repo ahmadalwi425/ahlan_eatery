@@ -19,10 +19,10 @@ class orderController extends Controller
 
     }
 
-    public function pesanmeja(Request $request)
+    public function pesanmeja($id)
     {
-        $no_table = $request->no_meja;
-
+        $no_table = $id;
+        // dd($no_table);
         do{
             $no_pesanan = random_int(100000, 999999);
         }while(order::where('id',$no_pesanan)->get()->count() > 0);
@@ -51,10 +51,17 @@ class orderController extends Controller
         
     }
 
+    public function orderList(Request $request)
+    {
+        $data = json_decode($request->get('order-list'), true);
+        dd($request->get('no_table'));
+    }
+
+
     
     public function create()
     {
-        //
+        
     }
     public function cekorder()
     {

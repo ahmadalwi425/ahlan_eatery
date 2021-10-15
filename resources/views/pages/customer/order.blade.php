@@ -72,7 +72,14 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Order now</button>
+						<form action="{{route('orderList')}}" method="POST">
+							@csrf
+							<input type="hidden" name="no_table" value = "{{$no_table}}">
+							<input type="hidden" name="no_pesanan" value= "{{$no_pesanan}}">
+							<input type="hidden" name="nama_pemesan" value= "{{$nama_pemesan}}">
+							<input type="hidden" name="order-list" id = "order-list">
+							<button type="submit" class="btn btn-primary">Order now</button>
+						</form>
 					</div>
 				</div>
 			</div>
