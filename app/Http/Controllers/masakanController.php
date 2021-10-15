@@ -79,15 +79,12 @@ class masakanController extends Controller
             'status'=>'nullable',
             'gambar' => 'nullable'
         ]);
-
+        // dd($request->file('gambar'));
         // dd($request->get('nama_masakan'));
-         $masakan = masakan::with('jenis_masakan')->where('id', $id)->first();
+        $masakan = masakan::with('jenis_masakan')->where('id', $id)->first();
         if ($request->file('gambar')) {
-            if($masakan->gambar && file_exists(storage_path('app/public/' . $masakan->gambar))) {
-                Storage::delete('public/' . $masakan->gambar);
-                $image_name = $request->file('gambar')->store('images', 'public');
-                $masakan->gambar = $image_name;
-            }
+            $image_name = $request->file('gambar')->store('images', 'public');
+            $masakan->gambar = $image_name;
         }
 
         $masakan->nama_masakan = $request->get('nama_masakan');

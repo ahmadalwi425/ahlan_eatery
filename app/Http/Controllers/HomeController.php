@@ -34,9 +34,12 @@ class HomeController extends Controller
             // dd($waiter);
             return view('pages.admin.indexWaiter', compact('waiter'));
         }else{
-
         $masakan = masakan::with('jenis_masakan')->get();
         return view ('pages.waiter.menu.indexMenu', compact('masakan'));
         }
+    }
+    public function scan()
+    {
+        return view('qrcode.scan');
     }
 }
