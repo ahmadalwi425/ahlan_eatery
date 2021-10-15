@@ -4,7 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\masakanController;
 use App\Http\Controllers\jenis_masakanController;
 use App\Http\Controllers\extraController;
+
+use App\Http\Controllers\waiterController;
+use App\Http\Controllers\mejaController;
+
 use App\Http\Controllers\orderController;
+
 use Illuminate\Http\Request;
 
 /*
@@ -39,6 +44,10 @@ Route::resource('order', orderController::class);
 Route::any('cekorder', [App\Http\Controllers\orderController::class, 'cekorder']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::get('/meja', [mejaController::class, 'index']);
+//Route::post('/meja', [mejaController::class, 'store'])->name('store');
+//Route::get('qrcode/{id}', [mejaController::class, 'generate'])->name('generate');
 
 
 
