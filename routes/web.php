@@ -5,6 +5,7 @@ use App\Http\Controllers\masakanController;
 use App\Http\Controllers\jenis_masakanController;
 use App\Http\Controllers\extraController;
 use App\Http\Controllers\waiterController;
+use App\Http\Controllers\mejaController;
 use Illuminate\Http\Request;
 
 /*
@@ -29,6 +30,10 @@ Route::get('/pesan/{id}', [App\Http\Controllers\orderController::class, 'pesanme
 Route::post('/pesan', [App\Http\Controllers\orderController::class, 'tampilpesan']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/meja', [mejaController::class, 'index']);
+Route::post('/meja', [mejaController::class, 'store'])->name('store');
+Route::get('qrcode/{id}', [mejaController::class, 'generate'])->name('generate');
 
 
 Route::middleware(['auth'])->group(function () {
