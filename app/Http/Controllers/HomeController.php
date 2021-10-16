@@ -39,8 +39,5 @@ class HomeController extends Controller
         return view ('pages.waiter.menu.indexMenu', compact('masakan'));
         }
     }
-    public function scan()
-    {
-        return view('qrcode.scan');
-    }
+    
 }

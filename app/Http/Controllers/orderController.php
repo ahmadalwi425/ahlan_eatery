@@ -19,9 +19,9 @@ class orderController extends Controller
 
     }
 
-    public function pesanmeja($id)
+    public function pesanmeja(Request $request)
     {
-        $no_table = $id;
+        $no_table = $request->no_meja;
         // dd($no_table);
         do{
             $no_pesanan = random_int(100000, 999999);
