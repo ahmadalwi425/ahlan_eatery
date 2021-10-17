@@ -48,9 +48,17 @@
 					
 				</table>
 				<h5>Total Keseluruhan : Rp. {{$total}}</h5>
-				<input type="Submit" class="btn btn mt-3" style="background:rgb(214, 153, 19); color:rgb(255, 253, 248);"
-				value="Pesan Sekarang" data-toggle="modal" data-target="#konfirmasi">
-				
+
+
+				<form action="{{route('order.store')}}" method="POST">
+					@csrf
+					<input type="hidden" name="no_table" value="{{$no_table}}">
+					<input type="hidden" name="no_pesanan" value="{{$no_pesanan}}">
+					<input type="hidden" name="nama_pemesan" value="{{$nama_pemesan}}">
+					<input type="hidden" name="total" id="total" value="{{$total}}">
+					<input type="hidden" name="order-list" id="order-list" value="{{$pesananRaw}}" > 
+				  <input type="Submit" class="btn btn mt-3" style="background:rgb(214, 153, 19); color:rgb(255, 253, 248);" value="Pesan Sekarang" data-toggle="modal" data-target="#konfirmasi">
+				</form>
 
 		</div>
 		
