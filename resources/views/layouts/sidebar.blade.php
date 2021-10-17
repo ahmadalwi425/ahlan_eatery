@@ -16,7 +16,7 @@
 		@elseif(Auth::user()->level ==  2)
 		<ul class="pcoded-item pcoded-left-item">
 			<li class="active">
-				<a href="index.html">
+				<a href="{{route('orderWaiter.index')}}">
 					<span class="pcoded-micon"><i class="ti-clipboard"></i><b>D</b></span>
 					<span class="pcoded-mtext" data-i18n="nav.dash.main">Order (Open)</span>
 					<span class="pcoded-mcaret"></span>

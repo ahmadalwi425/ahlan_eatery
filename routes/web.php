@@ -9,6 +9,7 @@ use App\Http\Controllers\waiterController;
 use App\Http\Controllers\mejaController;
 
 use App\Http\Controllers\orderController;
+use App\Http\Controllers\orderWaiterController;
 use Illuminate\Http\Request;
 
 
@@ -44,4 +45,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('jenis_masakan', jenis_masakanController::class);
     Route::resource('extra', extraController::class);
     Route::resource('waiter', waiterController::class);
+    Route::resource('orderWaiter', orderWaiterController::class);
 });

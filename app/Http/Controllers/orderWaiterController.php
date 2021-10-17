@@ -10,8 +10,8 @@ class orderWaiterController extends Controller
     
     public function index()
     {
-        $order = order::all();
-        return view ('pages.waiter.order.index', ['meja' => $meja]);
+        $order = order::get();
+        return view ('pages.waiter.order.openOrder', compact('order'));
     }
 
    
