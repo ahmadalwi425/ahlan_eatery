@@ -32,12 +32,13 @@
 		@php $no = 1; @endphp
 		@foreach ($order as $ord)
 		<tr>
-			<td>{{$ord->$no_meja}}</td>
-			<td>{{$ord->$id}}</td>
+			<td>{{$ord->no_meja}}</td>
+			<td>{{$ord->id}}</td>
+			<td>{{$ord->nama}}</td>
 			<td>{{$ord->tanggal}}</td>
 			<td>{{$ord->status_order }}</td>
 			<td>{{$ord->harga}}</td>
-			<th><button>Lihat Detail</button></th>
+			<th><a href="{{url('waiter/detailorder/'.$ord->id)}}">Lihat detail</a></th>
 		</tr>
 		@endforeach
 	</table>
