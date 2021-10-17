@@ -43,7 +43,7 @@
 					<input type="hidden" name="nama_pemesan" value="{{$nama_pemesan}}">
 					<input type="hidden" name="total" id="total" value="{{$total}}">
 					<input type="hidden" name="order-list" id="order-list" value="{{$pesananRaw}}" > --}}
-					<input type="Sumbit" class= "btn btn-primary" value="Gas Pesan">
+					<input type="submit" class= "btn btn-primary" value="Gas Pesan">
 				</form>
 
 		</div>
