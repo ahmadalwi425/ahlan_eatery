@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\order;
+use App\Models\order_detail;
 use App\Models\masakan;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -43,7 +44,7 @@ class orderController extends Controller
 
     public function dataPesanan(Request $request)
     {
-         $request->validate([
+        $request->validate([
             'no_table'=>'required',
             'no_pesanan' => 'required',
             'nama_pemesan'=>'required',
@@ -94,7 +95,32 @@ class orderController extends Controller
     
     public function store(Request $request)
     {
-        return view('pages.customer.history');
+        $pesananRaw = $request->get('order-list');
+        $pesanan = json_decode($request->get('order-list'), true);
+        $no_pesanan = $request->get('no_pesanan');
+        $no_table = $request->get('no_table');
+        $nama_pemesan = $request->get('nama_pemesan');
+        $total = $request->get('total');
+        $order = order::create([
+            'id'     => $no_pesanan,
+            'no_meja'     => $no_table,
+            'nama' => $nama_pemesan,
+            'tanggal'=> Carbon::now(),
+            'harga'=> $total,
+        ]);
+        foreach($pesanan as $row){
+            // echo ($row['id']);
+            $order_detail = order_detail::create([
+                'id_order'     => $no_pesanan,
+                'id_masakan'     => $row['id'],
+                'keterangan' => "-",
+                'harga'=> $row['total'],
+                'qty' => $row['count'],
+            ]);
+        }
+        // $masakan = masakan::all();
+        // dd($pesanan);
+        return view('pages.customer.history', compact('no_table','no_pesanan', 'nama_pemesan', 'pesanan', 'total', 'pesananRaw'));
     }
 
     
@@ -115,7 +141,6 @@ class orderController extends Controller
         //
     }
 
-   
     public function destroy($id)
     {
         //
