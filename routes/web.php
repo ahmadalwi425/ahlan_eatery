@@ -19,7 +19,8 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::get('/scan', [App\Http\Controllers\homeController::class, 'scan']);
+Route::post('/pesanmeja', [App\Http\Controllers\orderController::class, 'pesanmeja']);
+Route::get('/scan', [App\Http\Controllers\guessController::class, 'scan']);
 
 Route::resource('order', orderController::class);
 Route::get('/pesan/meja/{id}', [App\Http\Controllers\orderController::class, 'cekDataPesanan']);
