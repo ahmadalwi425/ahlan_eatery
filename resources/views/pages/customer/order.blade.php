@@ -23,11 +23,12 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+	<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded" style = "display: flex; justify-content:flex-end">
 		<div class="row">
 			<div class="col">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span
-						class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span
+							class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button>
+				
 			</div>
 		</div>
 	</nav>
@@ -68,7 +69,7 @@
 						<table class="show-cart table">
 
 						</table>
-						<div>Total price: $<span class="total-cart"></span></div>
+						<div>Total price: Rp <span class="total-cart"></span></div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -77,6 +78,7 @@
 							<input type="hidden" name="no_table" value = "{{$no_table}}">
 							<input type="hidden" name="no_pesanan" value= "{{$no_pesanan}}">
 							<input type="hidden" name="nama_pemesan" value= "{{$nama_pemesan}}">
+							<input type="hidden" name="total" id = "total">
 							<input type="hidden" name="order-list" id = "order-list">
 							<button type="submit" class="btn btn-primary">Order now</button>
 						</form>

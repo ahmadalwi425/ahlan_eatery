@@ -38,7 +38,6 @@
 						</div>
 					</div>
 					<hr />
-
 				</div>
 			</form>
 			<!-- end of form -->

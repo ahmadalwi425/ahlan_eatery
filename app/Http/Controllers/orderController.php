@@ -19,16 +19,24 @@ class orderController extends Controller
 
     }
 
-    public function pesanmeja($id)
+    public function pesanmeja(Request $request)
     {
-        $no_table = $id;
-        // dd($no_table);
+        $no_table = $request->get('no_meja');
         do{
             $no_pesanan = random_int(100000, 999999);
         }while(order::where('id',$no_pesanan)->get()->count() > 0);
-        return view('passtable', compact('no_pesanan','no_table'));
+        return view('pages.customer.passtable', compact('no_pesanan','no_table'));
 
         
+    }
+
+    public function cekDataPesanan($no)
+    {
+        $no_table = $no;
+        do{
+            $no_pesanan = random_int(100000, 999999);
+        }while(order::where('id',$no_pesanan)->get()->count() > 0);
+        return view('pages.customer.passtable', compact('no_pesanan','no_table'));   
     }
 
 
@@ -43,6 +51,7 @@ class orderController extends Controller
         $no_table = $request->get('no_table');
         $no_pesanan = $request->get('no_pesanan');
         $nama_pemesan = $request->get('nama_pemesan');
+        
         $masakan = masakan::all();
 
         // dd($nama_pemesan, $no_table, $no_pesanan);
@@ -53,8 +62,16 @@ class orderController extends Controller
 
     public function orderList(Request $request)
     {
-        $data = json_decode($request->get('order-list'), true);
-        dd($request->get('no_table'));
+        $pesananRaw = $request->get('order-list');
+        $pesanan = json_decode($request->get('order-list'), true);
+        $no_pesanan = $request->get('no_pesanan');
+        $no_table = $request->get('no_table');
+        $nama_pemesan = $request->get('nama_pemesan');
+        $total = $request->get('total');
+        $masakan = masakan::all();
+        // dd($pesananRaw);
+        return view('pages.customer.summary', compact('no_table','no_pesanan', 'nama_pemesan', 'pesanan', 'total', 'pesananRaw'));
+
     }
 
 
@@ -76,7 +93,7 @@ class orderController extends Controller
     
     public function store(Request $request)
     {
-        //
+        return view('pages.customer.history');
     }
 
     
