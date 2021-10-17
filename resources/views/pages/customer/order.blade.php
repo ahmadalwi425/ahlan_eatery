@@ -40,7 +40,7 @@
 			@foreach ($masakan as $item)
 			<div class="row">
 				<div class="col">
-					<div class="card" style="width: 20rem;">
+					<div class="card" style="width: 20rem; display: flex">
 						<img class="card-img-top" src="{{asset('storage/'.$item->gambar) }}" alt="Card image cap">
 						<div class="card-block">
 							<h4 class="card-title">{{$item->nama_masakan}}</h4>
