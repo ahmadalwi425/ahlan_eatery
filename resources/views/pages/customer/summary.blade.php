@@ -38,11 +38,11 @@
 
 				<form action="{{route('order.store')}}" method="POST">
 					@csrf
-					{{-- <input type="hidden" name="no_table" value="{{$no_table}}">
+					<input type="hidden" name="no_table" value="{{$no_table}}">
 					<input type="hidden" name="no_pesanan" value="{{$no_pesanan}}">
 					<input type="hidden" name="nama_pemesan" value="{{$nama_pemesan}}">
 					<input type="hidden" name="total" id="total" value="{{$total}}">
-					<input type="hidden" name="order-list" id="order-list" value="{{$pesananRaw}}" > --}}
+					<input type="hidden" name="order-list" id="order-list" value="{{$pesananRaw}}" > 
 					<input type="submit" class= "btn btn-primary" value="Gas Pesan">
 				</form>
 
