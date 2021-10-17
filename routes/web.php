@@ -46,4 +46,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('extra', extraController::class);
     Route::resource('waiter', waiterController::class);
     Route::resource('orderWaiter', orderWaiterController::class);
+    Route::get('/waiter/detailorder/{id}', [App\Http\Controllers\orderWaiterController::class, 'show']);
 });
