@@ -21,7 +21,8 @@ class orderController extends Controller
 
     public function pesanmeja(Request $request)
     {
-        $no_table = $request->get('no_meja');
+        $no_table = $request->no_meja;
+        // dd($no_table);
         do{
             $no_pesanan = random_int(100000, 999999);
         }while(order::where('id',$no_pesanan)->get()->count() > 0);

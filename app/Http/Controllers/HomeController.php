@@ -19,6 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
+
         if(Auth::User()->level == 1){
             $waiter = User::where('level', '2')->get();
             // dd($waiter);
@@ -28,8 +29,5 @@ class HomeController extends Controller
         return view ('pages.waiter.menu.indexMenu', compact('masakan'));
         }
     }
-    public function scan()
-    {
-        return view('qrcode.scan');
-    }
+    
 }
