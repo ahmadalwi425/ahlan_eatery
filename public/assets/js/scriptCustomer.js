@@ -183,6 +183,7 @@ function displayCart() {
 
 	$('.show-cart').html(output);
 	$('#order-list').val(json);
+	$('#total').val(shoppingCart.totalCart());
 	$('.total-cart').html(shoppingCart.totalCart());
 	$('.total-count').html(shoppingCart.totalCount());
 }
@@ -219,3 +220,6 @@ $('.show-cart').on("change",".item-count",function(event) {
 
 
 displayCart();
+
+
+

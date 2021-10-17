@@ -41,7 +41,6 @@
         flipVerticalValue = Q("#flipVertical-value"),
         flipHorizontal = Q("#flipHorizontal"),
         flipHorizontalValue = Q("#flipHorizontal-value");
-    var hasilscan = Q("#hasilscan");
     var args = {
         autoBrightnessValue: 100,
         resultFunction: function(res) {

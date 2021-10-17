@@ -56,12 +56,6 @@
         </div>
         <script type="text/javascript" src="{{asset('assets/assetsqrcode/')}}/js/filereader.js"></script>
         <!-- Using jquery version: -->
-        <!--
-            <script type="text/javascript" src="{{asset('assets/assetsqrcode/')}}/js/jquery.js"></script>
-            <script type="text/javascript" src="{{asset('assets/assetsqrcode/')}}/js/qrcodelib.js"></script>
-            <script type="text/javascript" src="{{asset('assets/assetsqrcode/')}}/js/webcodecamjquery.js"></script>
-            <script type="text/javascript" src="{{asset('assets/assetsqrcode/')}}/js/mainjquery.js"></script>
-        -->
         <script type="text/javascript" src="{{asset('assets/assetsqrcode/')}}/js/qrcodelib.js"></script>
         <script type="text/javascript" src="{{asset('assets/assetsqrcode/')}}/js/webcodecamjs.js"></script>
         <script type="text/javascript" src="{{asset('assets/assetsqrcode/')}}/js/main.js"></script>

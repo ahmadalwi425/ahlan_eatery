@@ -9,19 +9,8 @@ use App\Http\Controllers\waiterController;
 use App\Http\Controllers\mejaController;
 
 use App\Http\Controllers\orderController;
-
 use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('home');
@@ -30,15 +19,14 @@ Route::get('/', function () {
 
 
 Auth::routes();
-
 Route::post('/pesanmeja', [App\Http\Controllers\orderController::class, 'pesanmeja']);
 Route::get('/scan', [App\Http\Controllers\guessController::class, 'scan']);
 
-
-Route::get('/pesan/meja/{id}', [App\Http\Controllers\orderController::class, 'pesanmeja']);
-Route::post('/pesan', [App\Http\Controllers\orderController::class, 'dataPesanan']);
-Route::post('/order/list', [App\Http\Controllers\orderController::class, 'orderList'])->name('orderList');
 Route::resource('order', orderController::class);
+Route::get('/pesan/meja/{id}', [App\Http\Controllers\orderController::class, 'cekDataPesanan']);
+Route::post('/send/nama', [App\Http\Controllers\orderController::class, 'dataPesanan'])->name('sendNama');
+Route::post('/order/list', [App\Http\Controllers\orderController::class, 'orderList'])->name('orderList');
+
 
 
 Route::any('cekorder', [App\Http\Controllers\orderController::class, 'cekorder']);
