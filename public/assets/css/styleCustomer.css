@@ -49,16 +49,15 @@ body{
 }
 
 #box > h3{
-  text-transform: uppercase;
   text-align: center;
   font-size: .9em;
-  color: #cccccc;
+  color: #979696;
   margin: 0 0 0px 0;
 }
   
 #box > form {
   width: 100%;
-  height: auo;
+  height: auto;
   margin: 0 auto;
   text-align: center;
 }
