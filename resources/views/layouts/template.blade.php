@@ -107,16 +107,16 @@
 						</ul>
 						<ul class="nav-right">
 							<li class="header-notification">
-								<a href="#!">
+								{{-- <a href="#!">
 									<i class="ti-bell"></i>
 									<span class="badge bg-c-pink"></span>
-								</a>
-								@include('layouts.notification')
+								</a> --}}
+								{{-- @include('layouts.notification') --}}
 							</li>
 							<li class="user-profile header-notification">
 								<a href="#!">
-									<img src="{{asset('assets')}}/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-									<span>John Doe</span>
+									
+									<span>{{Auth::user()->name}}</span>
 									<i class="ti-angle-down"></i>
 								</a>
 								<ul class="show-notification profile-notification">
@@ -175,13 +175,6 @@
 	</div>
 		
 	</div>
-	<!-- Argon Scripts -->
-	<!-- Core -->
-	{{-- <script src="{{asset('assets')}}/vendor/jquery/dist/jquery.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/js-cookie/js.cookie.js"></script>
-	<script src="{{asset('assets')}}/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script> --}}
 	<!-- Optional JS -->
 	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.min.js"></script>
 	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.extension.js"></script>

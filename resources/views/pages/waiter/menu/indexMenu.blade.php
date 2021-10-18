@@ -22,7 +22,7 @@
         <p>{{ $message }}</p>
     </div>
 @endif
-<button onClick="notif_me()"> tes </button>
+{{-- <button onClick="notif_me()"> tes </button> --}}
 <table class="table table-bordered">
     <tr>
         <th>No</th>

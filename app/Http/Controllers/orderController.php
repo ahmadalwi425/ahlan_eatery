@@ -71,6 +71,7 @@ class orderController extends Controller
         $nama_pemesan = $request->get('nama_pemesan');
         $total = $request->get('total');
         $masakan = masakan::all();
+        //  dd($pesanan);
         // dd($pesananRaw);
         return view('pages.customer.summary', compact('no_table','no_pesanan', 'nama_pemesan', 'pesanan', 'total', 'pesananRaw'));
 
@@ -85,7 +86,7 @@ class orderController extends Controller
     public function cekorder()
     {
         $stat = false;
-        $kondisi = "diproses";
+        $kondisi = "0";
         if(order::where('status_order',$kondisi)->get()->count() > 0){
             $stat = true;
         }
@@ -107,6 +108,7 @@ class orderController extends Controller
             'nama' => $nama_pemesan,
             'tanggal'=> Carbon::now(),
             'harga'=> $total,
+            'status_order' => 0,
         ]);
         foreach($pesanan as $row){
             // echo ($row['id']);

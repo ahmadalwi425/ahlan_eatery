@@ -36,21 +36,21 @@
 
 	<!-- Main -->
 	<div class="container">
-		<div class="row">
+		<div>
 			@foreach ($masakan as $item)
-			<div class="row">
-				<div class="col">
-					<div class="card" style="width: 20rem; display: flex">
-						<img class="card-img-top" src="{{asset('storage/'.$item->gambar) }}" alt="Card image cap">
-						<div class="card-block">
-							<h4 class="card-title">{{$item->nama_masakan}}</h4>
-							<p class="card-text">{{$item->harga}}</p>
-							<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}" class="add-to-cart btn btn-primary">Add to cart</a>
+					<div class="card">
+						<div style="display: flex; gap: 30px">	
+							<div>
+								<img class="card-img-top" src="{{asset('storage/'.$item->gambar) }}" alt="Card image cap">
+							</div>
+							<div class = "pt-3">
+								<h5>{{$item->nama_masakan}}</h5>
+								<p class="card-text">Harga: Rp {{$item->harga}}</p>
+								<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}" class="add-to-cart btn btn-primary">Add to cart</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				@endforeach
-			</div>
+			@endforeach
 		</div>
 
 

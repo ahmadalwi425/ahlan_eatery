@@ -7,6 +7,7 @@ use Auth;
 use DB;
 use App\Models\masakan;
 use App\Models\jenis_masakan;
+use App\Models\order;
 use App\Models\User;
 
 
@@ -25,8 +26,9 @@ class HomeController extends Controller
             // dd($waiter);
             return view('pages.admin.indexWaiter', compact('waiter'));
         }else{
-        $masakan = masakan::with('jenis_masakan')->get();
-        return view ('pages.waiter.menu.indexMenu', compact('masakan'));
+        $stattrigger = 0;
+        $order = order::where('status_order',$stattrigger)->get();
+        return view('pages.waiter.order.openOrder', compact('order'));
         }
     }
     

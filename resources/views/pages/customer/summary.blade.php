@@ -34,7 +34,8 @@
 						<th>No</th>
 						<th>Nama Masakan</th>
 						<th>Quantity</th>
-						<th>Total Harga</th>
+						<th>Harga Satuan</th>
+						<th>Total</th>
 					</tr>
 					@php $no = 1; @endphp
 					@foreach ($pesanan as $p)
@@ -43,22 +44,13 @@
 							<td>{{$p['name']}}</td>
 							<td>{{$p['count']}}</td>
 							<td>Rp. {{$p['price']}}</td>
+							<td>Rp. {{$p['total']}}</td>
 						</tr>
 					@endforeach
 					
 				</table>
 				<h5>Total Keseluruhan : Rp. {{$total}}</h5>
-
-
-				<form action="{{route('order.store')}}" method="POST">
-					@csrf
-					<input type="hidden" name="no_table" value="{{$no_table}}">
-					<input type="hidden" name="no_pesanan" value="{{$no_pesanan}}">
-					<input type="hidden" name="nama_pemesan" value="{{$nama_pemesan}}">
-					<input type="hidden" name="total" id="total" value="{{$total}}">
-					<input type="hidden" name="order-list" id="order-list" value="{{$pesananRaw}}" > 
-				  <input type="Submit" class="btn btn mt-3" style="background:rgb(214, 153, 19); color:rgb(255, 253, 248);" value="Pesan Sekarang" data-toggle="modal" data-target="#konfirmasi">
-				</form>
+				<input type="Submit" class="btn btn mt-3" style="background:rgb(214, 153, 19); color:rgb(255, 253, 248);" value="Pesan Sekarang" data-toggle="modal" data-target="#konfirmasi">
 
 		</div>
 		
@@ -89,7 +81,7 @@
 						<input type="hidden" name="order-list" id="order-list" value="{{$pesananRaw}}">
 					<a type="button" class="btn btn-secondary" style = "color: white" data-dismiss="modal">Close</a>
 					<input type="Submit" class="btn" style="background:rgb(214, 153, 19); color:rgb(255, 253, 248);"
-						value="Gas Pesan" data-toggle="modal" data-target="#konfirmasi">
+						value="Gas Pesan">
 					</form>
 				</div>
 			</div>

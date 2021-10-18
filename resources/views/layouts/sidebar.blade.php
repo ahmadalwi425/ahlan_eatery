@@ -23,7 +23,7 @@
 				</a>
 			</li>
 			<li class="active">
-				<a href="index.html">
+				<a href="{{route('closeOrder')}}">
 					<span class="pcoded-micon"><i class="ti-agenda"></i><b>D</b></span>
 					<span class="pcoded-mtext" data-i18n="nav.dash.main">Order (Closed)</span>
 					<span class="pcoded-mcaret"></span>
@@ -50,13 +50,13 @@
 							<span class="pcoded-mcaret"></span>
 						</a>
 					</li>
-					<li class=" ">
+					{{-- <li class=" ">
 						<a href="{{route('extra.index')}}">
 							<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 							<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Menu Extra</span>
 							<span class="pcoded-mcaret"></span>
 						</a>
-					</li>
+					</li> --}}
 				</ul>
 
 				@endif

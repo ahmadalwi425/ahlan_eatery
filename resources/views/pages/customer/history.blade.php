@@ -8,43 +8,41 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap/css/bootstrap.min.css')}}">
 	<title>Document</title>
 </head>
-<body>
+<body style="background: rgb(255, 234, 192)">
 	<div style=" display : flex;justify-content: center;">
-		<div style="padding: 50px 100px; text-align: center; border: 1px solid black;">
-				<h5>No Meja: {{$no_table}}</h5>
-				<h5>No Pesanan: {{$no_pesanan}}</h5>
-				<h5>Nama Pemesan: {{$nama_pemesan}}</h5>
-				<hr>
-
-				<table class = "table table-bordered">
-					<tr>
-						<th>No</th>
-						<th>Nama Masakan</th>
-						<th>Quantity</th>
-						<th>Total Harga</th>
-					</tr>
-					@php $no = 1; @endphp
-					@foreach ($pesanan as $p)
-						<tr>
-							<td>{{$no++}}</td>
-							<td>{{$p['name']}}</td>
-							<td>{{$p['count']}}</td>
-							<td>Rp. {{$p['price']}}</td>
-						</tr>
-					@endforeach
-					
-				</table>
-				<h5>Total Keseluruhan : Rp. {{$total}}</h5>
-
-				<form action="{{route('order.store')}}" method="POST">
-					@csrf
-					<input type="hidden" name="no_table" value="{{$no_table}}">
-					<input type="hidden" name="no_pesanan" value="{{$no_pesanan}}">
-					<input type="hidden" name="nama_pemesan" value="{{$nama_pemesan}}">
-					<input type="hidden" name="total" id="total" value="{{$total}}">
-					<input type="hidden" name="order-list" id="order-list" value="{{$pesananRaw}}" > 
-				</form>
-
+		<div
+			style="padding: 50px 50px; text-align: center; background: white; box-shadow: -6px 9px 153px -49px rgba(0,0,0,0.30);border-radius: 5px; margin-bottom: 100px">
+			<img src="{{asset('assets/images/logo.jpeg')}}" alt="lock" style="width: 50px; margin-bottom: 10px" />
+			<h5 style="color: rgb(214, 153, 19)">No Pesanan {{$no_pesanan}}</h5>
+			<h5 style="color: rgb(196, 147, 41)">{{$no_table}} / {{$nama_pemesan}}</h5>
+			<div style="background :rgb(214, 153, 19); height: 5px">
+				<p> </p>
+			</div>
+			<table class="table table-bordered mt-4">
+				<tr>
+					<th>No</th>
+					<th>Nama Masakan</th>
+					<th>Quantity</th>
+					<th>Harga Satuan</th>
+					<th>Total Harga</th>
+				</tr>
+				@php $no = 1; @endphp
+				@foreach ($pesanan as $p)
+				<tr>
+					<td>{{$no++}}</td>
+					<td>{{$p['name']}}</td>
+					<td>{{$p['count']}}</td>
+					<td>Rp. {{$p['price']}}</td>
+					<td>Rp. {{$p['price']}}</td>
+				</tr>
+				@endforeach
+		
+			</table>
+			<h5>Total Keseluruhan : Rp. {{$total}}</h5>
+			<hr class = "mt-5">
+			<p style="font-size: 12px">Silakan tunggu pesanan Anda</p>
+			<p style="font-size: 12px">Terima Kasih sudah memesanan di restoran kami</p>
+		</div>
 		</div>
 		
 
