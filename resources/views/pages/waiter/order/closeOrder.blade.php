@@ -40,15 +40,9 @@
 		<td>
 			<div id="status{{$ord->status_order }}">
 				<center>
-					@if($ord->status_order == 0)
-					<div
-						style="background-color: rgb(253, 217, 188) !important; color:rgb(247, 184, 49); border-radius:50px; padding: 5px; min-width: 100px">
-						di proses</div>
-					@else
-					<div
-						style="background-color: rgb(202, 250, 195) !important; color:rgb(45, 161, 35); border-radius:50px; padding: 5px; min-width: 100px; font-weight: bold">
-						Selesai</div>
-					@endif
+					<div style="background-color: rgb(202, 250, 195) !important; color:rgb(45, 161, 35); border-radius:50px; padding: 5px; min-width: 100px; font-weight: bold">
+						Selesai
+					</div>
 				</center>
 			</div>
 		</td>

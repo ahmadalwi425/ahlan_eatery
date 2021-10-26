@@ -12,10 +12,14 @@
 	<h5>No Pesanan : {{$order->id}}</h5>
 	<h5>No Meja : {{$order->no_meja}}</h5>
 	<h5>No Pemesan : {{$order->nama}}</h5>
-	@if ($order->status_order == 0)
+	@if ($order->status_order == "diproses")
 	<div
 			style="background-color: rgb(253, 217, 188) !important; color:rgb(165, 115, 6); border-radius:50px; padding: 5px; max-width: 100px; font-weight: bold">
 			di proses</div>
+	@elseif ($order->status_order == "dibayar")
+	<div
+			style="background-color: rgb(253, 217, 188) !important; color:rgb(165, 115, 6); border-radius:50px; padding: 5px; max-width: 100px; font-weight: bold">
+			di bayar</div>
 	@else
 	<div
 		style="background-color: rgb(202, 250, 195) !important; color:rgb(45, 161, 35); border-radius:50px; padding: 5px; max-width: 100px; font-weight: bold">

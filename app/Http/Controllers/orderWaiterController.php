@@ -11,14 +11,15 @@ class orderWaiterController extends Controller
     
     public function index()
     {
-        $stattrigger = 0;
-        $order = order::where('status_order',$stattrigger)->get();
+        $stattrigger1 = "diproses";
+        $stattrigger2 = "dibayar";
+        $order = order::where('status_order',$stattrigger1)->orWhere('status_order',$stattrigger2)->get();
         return view('pages.waiter.order.openOrder', compact('order'));
     }
 
     public function closeOrder()
     {
-        $stattrigger = 1;
+        $stattrigger = "ditutup";
         $order = order::where('status_order',$stattrigger)->get();
         return view ('pages.waiter.order.closeOrder', compact('order'));
     }
@@ -68,6 +69,18 @@ class orderWaiterController extends Controller
         $order = order::where('id',$id)->get();
         $orderDetail = order_detail::where('id_order', $id)->get();
         return view('pages.waiter.order.closeOrder', compact('order', 'orderDetail'));
+    }
+
+    public function konfirmasi($id, $code)
+    {
+        $order = order::where('id',$id)->first();
+        if($code == 1){
+            $order->status_order = "dibayar";
+        }elseif($code == 2){
+            $order->status_order = "ditutup";
+        }
+        $order->save();
+        return redirect()->route('orderWaiter.index');
     }
 
     
