@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('waiter', waiterController::class);
     Route::resource('orderWaiter', orderWaiterController::class);
     Route::get('/waiter/detailorder/{id}', [orderWaiterController::class, 'show']);
+    Route::get('/waiter/konfirmasistatus/{id}/{code}', [orderWaiterController::class, 'konfirmasi']);
     Route::get('updateStatus/{id}', [orderWaiterController::class, 'updateStatus'])->name('updateStatus');
     Route::get('close/order/', [orderWaiterController::class, 'closeOrder'])->name('closeOrder');
 });

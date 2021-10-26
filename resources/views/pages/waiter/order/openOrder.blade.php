@@ -38,32 +38,11 @@
 			<td>{{$ord->nama}}</td>
 			<td>{{$ord->tanggal}}</td>
 			<td>
-			 <div id="status{{$ord->status_order }}" style="justify-content: space-around; display:flex">
-				<center>
-					@if($ord->status_order == 0)
-					<div
-						style="background-color: rgb(253, 217, 188) !important; color:rgb(165, 115, 6); border-radius:50px; padding: 5px; min-width: 100px; font-weight: bold">
-						di proses</div>
-					@else
-					<div
-						style="background-color: rgb(202, 250, 195) !important; color:rgb(45, 161, 35); border-radius:50px; padding: 5px; min-width: 100px; font-weight: bold">
-						Selesai</div>
-					@endif
-				</center>
-				<a type="button" class="btn" href=""
-					onclick="$('#editStatus{{$ord->status_order}}').show(); $('#status{{$ord->status_order}}').hide(); return false;">
-					<i class="ti-marker-alt"></i></a>
-			</div>
-			<form id="editStatus{{$ord->status_order}}" action="{{route('updateStatus', $ord->id)}}"
-				style="display: none">
-				<select name="status">
-					<option value="0">Diproses</option>
-					<option value="1">Selesai</option>
-				</select>
-				<button type="submit" class="btn btn-sm btn-primary">done</button>
-				<a type="button" class="btn" href=""
-					onclick="$('#editStatus{{$ord->status_order}}').hide(); $('#status{{$ord->status_order}}').show(); return false; ">&times;</a>
-			</form>
+			@if($ord->status_order == "diproses")
+				<a href="{{url('waiter/konfirmasistatus/'.$ord->id.'/1')}}" class = "btn btn-primary">Dibayar</a>
+			@elseif($ord->status_order == "dibayar")
+				<a href="{{url('waiter/konfirmasistatus/'.$ord->id.'/2')}}" class = "btn btn-success">Selesai</a>
+			@endif
 			</td>
 			<td>{{$ord->harga}}</td>
 			<th><a href="{{url('waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Lihat detail</a></th>

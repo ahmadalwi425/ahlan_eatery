@@ -52,8 +52,8 @@
             });
             scannedImg.src = res.imgData;
             scannedQR[txt] = res.format + ": " + res.code;
-            // hasilscan[value] =  res.code;
             $('#hasilscan').val(res.code);
+            $('#kirimmeja').submit();
         },
         getDevicesError: function(error) {
             var p, message = "Error detected with the following parameters:\n";

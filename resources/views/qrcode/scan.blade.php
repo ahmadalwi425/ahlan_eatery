@@ -26,24 +26,20 @@
                     </div>
                 </div>
                 <div class="panel-body text-center">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="well" style="position: relative;display: inline-block;">
-                            <canvas width="320" height="240" id="webcodecam-canvas"></canvas>
-                            <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
-                            <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
-                            <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
-                            <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
+                            <canvas id="webcodecam-canvas" style="height: 60vh; width: 80vw; display: block;"></canvas>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="thumbnail" id="result">
-                            <div class="well" style="overflow: hidden;">
-                                <img width="320" height="240" id="scanned-img" src="">
+                    <div class="col-md-12">
+                        <div class="thumbnail" id="result" style="opacity:0; width:0px;height:0px;">
+                            <div class="well" style="overflow: hidden;opacity:0;width:0px;height:0px;">
+                                <img width="320" height="240" id="scanned-img"  style="opacity:0; width:0px;height:0px;" src="">
                             </div>
                             <div class="caption">
                                 <h3>Scanned result</h3>
                                 <p id="scanned-QR"></p>
-                                <form action="{{url('pesanmeja')}}" method="POST">
+                                <form action="{{url('pesanmeja')}}" id="kirimmeja" method="POST">
                                     @csrf
                                     <input type="hidden" id="hasilscan" name="no_meja" value="">
                                     <input type="submit" class="btn btn-primary">
